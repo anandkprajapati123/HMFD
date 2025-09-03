@@ -171,19 +171,45 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
 }
 .client-item{
     padding: 34px;
 }
 #clients img{
+    cursor: pointer;
     height: 180px;
     border-radius: 50px;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 5px 10px 18px gray;
+    transition: 0.3s;
+}
+#clients img:hover{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    transition: 0.3s;
+    box-shadow: 5px 10px 18px gray;
+    transform: translateY(-10px) scale(1.05);
 }
 
 footer{
     background: black;
     color: white;
     padding: 10px 25px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* utility classes */
