@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             const foodName = link.closest('.lines').querySelector('.caption').textContent;
             alert('You have ordered: ' + foodName);
+            window.location.href = `order.html?item=${encodeURIComponent(foodName)}`;
         });
     });
 });

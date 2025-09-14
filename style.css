@@ -2,16 +2,16 @@
     margin: 0;
     padding: 0;
 }
-
 #navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     top: 0;
-    /* position: sticky; */
+    position: sticky;
+    background: linear-gradient(to right, #006400, #228B22);
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
 }
-
 #navbar::before{
     content: "";
     background-color: black;
@@ -23,48 +23,51 @@
     z-index: -1;
     opacity: 0.4;
 }
-
 #logo{
     margin: 10px 34px;
 }
-
 #logo img{
     width: 80px;
     border-radius: 50px;
 }
-
 #navbar ul{
     margin-right: 20px;
     display: flex;
     float: right;
     font-family: "Parkinsans", sans-serif;
 }
-
 #navbar ul li{
     list-style: none;
     font-size: 1.5rem;
 }
-
 #navbar ul li a{
     color: white;
     display: block;
     padding: 3px 15px;
     border-radius: 20px;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
 }
-
 #navbar ul li a:hover{
-    /* color: black; */
-    background-color: yellowgreen;
+    background-color: rgb(32, 47, 3);
     font-size: 30px;
+    transform: scale(1.1);
 }
-
+/* Header */
+.header{
+    display: flex;
+    flex-direction: column;
+    padding: 3px 10px;
+    height: 310px;
+    align-items: center;
+    justify-content: center;
+}
 /* Home Section */
 #home{
     display: flex;
     flex-direction: column;
-    padding: 3px 200px;
-    height: 410px;
+    /* padding: 3px 10px; */
+    height: 310px;
     justify-content: center;
     align-items: center;
 }
@@ -77,14 +80,12 @@
     height: 542px;
     width: 100%;
     z-index: -1;
-    /* opacity: 0.89; */
+    opacity: 0.89;
 }
-
 #home h1{
-   color: white;
    text-align: center;
+   justify-content: center;
 }
-
 #home p{
    color: whitesmoke;
    text-align: center;
@@ -101,15 +102,16 @@
     padding: 33px;
     margin: 20px 25px;
     border-radius: 30px;
+    cursor: pointer;
     background: rgb(204, 198, 198);
     margin-bottom: 20px;
     box-shadow: 3px 5px 5px;
     transition: 0.2s ease-in-out;
 }
 .box:hover{
-        transform: scale(1.05);
-        box-shadow: 3px 5px 5px rgb(1, 1, 1, 0.5);
-        transition: 0.2s ease-in-out;
+    box-shadow: 3px 5px 5px rgb(1, 1, 1, 0.5);
+    transition: 0.2s ease-in-out;
+    transform: translateY(-8px) scale(1.05);
 }
 #services .box img{
     margin: auto;
@@ -119,7 +121,6 @@
 #services .box p{
     font-family: "Sofia", sans-serif;
 }
-
 /* contact section */
 #contact{
     position: relative;
@@ -153,7 +154,6 @@
     font-size: 1.5rem;
     font-family: "Playwrite HR Lijeva", cursive;
 }
-
 /* clients section */
 #client-section{
     position: relative;
@@ -189,7 +189,7 @@
     margin: 10px;
     border-radius: 30px;
     box-shadow: 5px 10px 18px gray;
-    transition: 0.3s;
+    transition: transform 0.3s ease;
 }
 #clients img:hover{
     text-align: center;
@@ -200,9 +200,8 @@
     gap: 10px;
     transition: 0.3s;
     box-shadow: 5px 10px 18px gray;
-    transform: translateY(-10px) scale(1.05);
+    transform: scale(1.1) rotate(-3deg);
 }
-
 footer{
     background: black;
     color: white;
@@ -210,6 +209,8 @@ footer{
     bottom: 0;
     left: 0;
     width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 /* utility classes */
@@ -235,6 +236,10 @@ footer{
     border-radius: 10px;
     cursor: pointer;
 }
+.btn:hover{
+    background: darkgreen;
+    transform: translateY(-3px) scale(1.05);
+}
 .contact-box a{
     color:brown;
     font-size: 1.2rem;
@@ -243,3 +248,19 @@ footer{
 .center{
     text-align: center;
 }
+
+
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar upgrade */
+#navbar {
+}
+#navbar ul li a {
+    
+}
+
+
