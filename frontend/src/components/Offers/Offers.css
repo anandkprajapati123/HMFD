@@ -1,0 +1,67 @@
+.offers {
+  padding: 80px 10%;
+  background: #F8F8F8;
+  text-align: center;
+}
+
+.offers h2 {
+  font-size: 32px;
+  color: #282C3F;
+  margin-bottom: 10px;
+}
+
+.offers-subtitle {
+  color: #686b78;
+  margin-bottom: 40px;
+}
+
+.offers-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.offer-card {
+  background: white;
+  width: 280px;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.offer-card h3 {
+  color: #FC8019;
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.coupon {
+  display: inline-block;
+  background: #FFF3E0;
+  color: #FC8019;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offers-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

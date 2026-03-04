@@ -1,0 +1,108 @@
+.navbar {
+  width: 100%;
+  padding: 18px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Logo Left Corner */
+.logo {
+  width: 150px;
+  cursor: pointer;
+}
+
+/* Menu Center */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #282C3F;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu li a:hover {
+  color: #FC8019;
+}
+
+.navbar-menu .active {
+  color: #FC8019;
+  border-bottom: 2px solid #FC8019;
+  padding-bottom: 3px;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Icons hover */
+.navbar-right img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-right img:hover {
+  transform: scale(1.1);
+}
+
+/* Cart dot */
+.navbar-search-icon {
+  position: relative;
+}
+
+.navbar-search-icon .dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #FC8019;
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
+}
+
+/* Sign In Button */
+.navbar button {
+  background: transparent;
+  border: 1px solid #FC8019;
+  color: #FC8019;
+  padding: 8px 25px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar button:hover {
+  background: #FC8019;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+  .navbar {
+    padding: 15px 20px;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+}
