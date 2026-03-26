@@ -1,59 +1,69 @@
+/* SECTION */
 .food-display {
-  background: #F8F8F8;
-  animation: fadeInUp 0.8s ease forwards;
+  padding: 40px 0;
+  background: #f5f7f6;
 }
 
-.food-display h2 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #282C3F;
-  margin-bottom: 40px;
-  position: relative;
+/* CONTAINER */
+.food-display-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.food-display h2::after {
-  content: "";
-  width: 60px;
-  height: 4px;
-  background: #FC8019;
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  border-radius: 2px;
+/* HEADER */
+.food-display-header {
+  margin-bottom: 25px;
 }
 
+.food-display-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e7d5b;
+}
+
+.food-display-header p {
+  display: none; /* not needed in app UI */
+}
+
+/* GRID */
 .food-display-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 35px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
 }
 
+/* ANIMATION */
+.food-display {
+  animation: fadeInUp 0.6s ease;
+}
 
-/* Animation */
 @keyframes fadeInUp {
-  0% {
+  from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(25px);
   }
-  100% {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Responsive */
+/* TABLET */
 @media (max-width: 900px) {
-  .food-display {
-    padding: 50px 5%;
-  }
-
-  .food-display h2 {
-    font-size: 26px;
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
+  .food-display {
+    padding: 30px 0;
+  }
+
   .food-display-list {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }

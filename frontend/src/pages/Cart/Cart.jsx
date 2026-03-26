@@ -4,79 +4,85 @@
 import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../Context/StoreContext";
-import { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
 
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
-
   const navigate = useNavigate()
 
   return (
     <div className="cart">
-      <div className="cart-items">
-        <div className="cart-items-title">
-          <p>Items</p>
-          <p>Title</p>
-          <p>Price</p>
-          <p>Quantity</p>
-          <p>Total</p>
-          <p>Remove</p>
-        </div>
-        <br />
-        <hr />
-        {food_list.map((item, index) => {
-          if (cartItems[item._id] > 0) {
-            return (
-              <div>
-                <div
-                  key={item._id}
-                  className="cart-items-title cart-items-item"
-                >
+      <div className="cart-container">
+
+        <div className="cart-items">
+
+          {food_list.map((item) => {
+            if (cartItems[item._id] > 0) {
+              return (
+                <div key={item._id} className="cart-item">
+                  
                   <img src={item.image} alt="" />
-                  <p>{item.name}</p>
-                  <p>₹{item.price}</p>
-                  <p>{cartItems[item._id]}</p>
-                  <p>₹{item.price * cartItems[item._id]}</p>
-                  <p onClick={()=>removeFromCart(item._id)} className="cross">X</p>
+
+                  <div className="cart-item-info">
+                    <h4>{item.name}</h4>
+                    <p>₹{item.price}</p>
+                  </div>
+
+                  <div className="cart-item-qty">
+                    <p>Qty: {cartItems[item._id]}</p>
+                  </div>
+
+                  <div className="cart-item-total">
+                    ₹{item.price * cartItems[item._id]}
+                  </div>
+
+                  <p onClick={() => removeFromCart(item._id)} className="remove-btn">✕</p>
+
                 </div>
-                <hr />
-              </div>
-            );
-          }
-        })}
-      </div>
-      <div className="cart-bottom">
-        <div className="cart-total">
-          <h2>Cart Total</h2>
-          <div>
+              );
+            }
+            return null;
+          })}
+
+        </div>
+
+        <div className="cart-bottom">
+
+          <div className="cart-total">
+            <h2>Cart Summary</h2>
+
             <div className="cart-total-details">
-              <p>Sub Total</p>
+              <p>Subtotal</p>
               <p>₹{getTotalCartAmount()}</p>
             </div>
-            <hr />
+
             <div className="cart-total-details">
-              <p>Delovery Fee</p>
-              <p>₹{getTotalCartAmount()===0?0:6}</p>
+              <p>Delivery Fee</p>
+              <p>₹{getTotalCartAmount() === 0 ? 0 : 6}</p>
             </div>
-            <hr />
-            <div className="cart-total-details">
+
+            <div className="cart-total-details total">
               <b>Total</b>
-              <b>₹{getTotalCartAmount()===0?0:getTotalCartAmount() + 6}</b>
+              <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 6}</b>
             </div>
+
+            <button onClick={() => navigate('/order')}>
+              Proceed to Checkout
+            </button>
           </div>
-            <button onClick={()=>navigate('/order')}>Proceed to Checkout</button>
-        </div>
-        <div className="cart-promocode">
-          <div>
-            <p>If you have a promo code, enter it here</p>
+
+          <div className="cart-promocode">
+            <p>Have a promo code?</p>
+
             <div className="cart-promocode-input">
-              <input type="text" placeholder="promo code" />
+              <input type="text" placeholder="Enter code" />
               <button>Apply</button>
             </div>
           </div>
+
         </div>
+
       </div>
     </div>
   );

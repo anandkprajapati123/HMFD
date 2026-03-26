@@ -1,67 +1,84 @@
+/* SECTION */
 .offers {
-  padding: 80px 10%;
-  background: #F8F8F8;
+  padding: 60px 0;
+  background: #f8f9fb;
+}
+
+/* CONTAINER */
+.offers-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.offers-header {
   text-align: center;
-}
-
-.offers h2 {
-  font-size: 32px;
-  color: #282C3F;
-  margin-bottom: 10px;
-}
-
-.offers-subtitle {
-  color: #686b78;
   margin-bottom: 40px;
 }
 
-.offers-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+.offers-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
 }
 
+.offers-header p {
+  color: #777;
+  font-size: 15px;
+}
+
+/* LIST */
+.offers-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+/* CARD */
 .offer-card {
-  background: white;
-  width: 280px;
-  padding: 30px 20px;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
+/* HOVER */
 .offer-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.1);
 }
 
+/* TITLE */
 .offer-card h3 {
   color: #FC8019;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
+/* TEXT */
 .offer-card p {
   font-size: 14px;
-  color: #555;
+  color: #777;
   margin-bottom: 15px;
 }
 
+/* COUPON */
 .coupon {
   display: inline-block;
-  background: #FFF3E0;
-  color: #FC8019;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
+  background: #fff3e0;
+  color: #FC8019;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .offers-container {
-    flex-direction: column;
-    align-items: center;
+/* MOBILE */
+@media (max-width: 600px) {
+  .offers-header h2 {
+    font-size: 26px;
   }
 }

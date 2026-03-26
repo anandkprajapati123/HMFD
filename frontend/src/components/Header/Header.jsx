@@ -4,18 +4,18 @@
 
 import React from 'react'
 import './Header.css'
+import { assets } from '../../assets/assets'
 
 const Header = () => {
   return (
     <div className='header'>
-      <div className="overlay"></div>
-
       <div className="header-contents">
-        <h2>Fresh Homemade Meals, Delivered Daily</h2>
-        <p>Healthy. Hygienic. Made with Love.</p>
-        <a href="#explore-menu" className="header-btn">
-          View Menu
-        </a>
+        <h1>Fresh Healthy Food</h1>
+        <p>Recommended for you</p>
+        <div className="header-search">
+          <img src={assets.search_icon} className="search-icon" alt="" />
+          <input type="text" placeholder="Search your favorite food..." />
+        </div>
       </div>
     </div>
   )

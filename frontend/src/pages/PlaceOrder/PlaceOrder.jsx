@@ -5,60 +5,75 @@
 
 import React, { useContext } from "react";
 import "./PlaceOrder.css";
-import { useNavigate } from "react-router-dom";
 import { StoreContext } from "../../Context/StoreContext";
 
 const PlaceOrder = () => {
   const { getTotalCartAmount } = useContext(StoreContext);
 
-  const navigate = useNavigate();
   return (
-    <form className="place-order">
-      <div className="place-order-left">
-        <p className="title">Delivery Information</p>
-        <div className="multi-fields">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-        </div>
-        <input type="email" placeholder="Email Address" />
-        <input type="text" placeholder="Street" />
-        <div className="multi-fields">
-          <input type="text" placeholder="City" />
-          <input type="text" placeholder="State" />
-        </div>
-        <div className="multi-fields">
-          <input type="text" placeholder="Pin Code" />
-          <input type="text" placeholder="Country" />
-        </div>
-        <input type="text" placeholder="Phone Number" />
-      </div>
-      <div className="place-order-right">
-        <div className="cart-bottom">
-          <div className="cart-total">
-            <h2>Cart Total</h2>
-            <div>
-              <div className="cart-total-details">
-                <p>Sub Total</p>
-                <p>₹{getTotalCartAmount()}</p>
-              </div>
-              <hr />
-              <div className="cart-total-details">
-                <p>Delovery Fee</p>
-                <p>₹{getTotalCartAmount() === 0 ? 0 : 6}</p>
-              </div>
-              <hr />
-              <div className="cart-total-details">
-                <b>Total</b>
-                <b>
-                  ₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 6}
-                </b>
-              </div>
-            </div>
-            <button>Proceed to Payment</button>
+    <div className="place-order">
+      <div className="place-order-container">
+
+        {/* LEFT FORM */}
+        <div className="place-order-left">
+          <h2 className="title">Delivery Information</h2>
+
+          <div className="form-group multi-fields">
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Last Name" />
+          </div>
+
+          <div className="form-group">
+            <input type="email" placeholder="Email Address" />
+          </div>
+
+          <div className="form-group">
+            <input type="text" placeholder="Street Address" />
+          </div>
+
+          <div className="form-group multi-fields">
+            <input type="text" placeholder="City" />
+            <input type="text" placeholder="State" />
+          </div>
+
+          <div className="form-group multi-fields">
+            <input type="text" placeholder="Pin Code" />
+            <input type="text" placeholder="Country" />
+          </div>
+
+          <div className="form-group">
+            <input type="text" placeholder="Phone Number" />
           </div>
         </div>
+
+        {/* RIGHT SUMMARY */}
+        <div className="place-order-right">
+          <div className="order-summary">
+
+            <h2>Order Summary</h2>
+
+            <div className="summary-row">
+              <p>Subtotal</p>
+              <p>₹{getTotalCartAmount()}</p>
+            </div>
+
+            <div className="summary-row">
+              <p>Delivery Fee</p>
+              <p>₹{getTotalCartAmount() === 0 ? 0 : 6}</p>
+            </div>
+
+            <div className="summary-row total">
+              <b>Total</b>
+              <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 6}</b>
+            </div>
+
+            <button className="payment-btn">Proceed to Payment</button>
+
+          </div>
+        </div>
+
       </div>
-    </form>
+    </div>
   );
 };
 

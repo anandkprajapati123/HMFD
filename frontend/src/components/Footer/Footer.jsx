@@ -8,35 +8,57 @@ import { assets } from '../../assets/assets'
 const Footer = () => {
   return (
     <div className='footer' id='footer'>
-      <div className="footer-content">
-        <div className="footer-content-left">
-          <img src={assets.play_store} alt="" />
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum similique reprehenderit accusamus.</p>
-          <div className="footer-social-icons">
-            <img src={assets.facebook_icon} alt="" />
-            <img src={assets.twitter_icon} alt="" />
-            <img src={assets.linkedin_icon} alt="" />
+
+      <div className="footer-container">
+
+        <div className="footer-content">
+
+          {/* LEFT */}
+          <div className="footer-content-left">
+            <img src={assets.play_store} alt="" className="footer-logo" />
+
+            <p>
+              Delicious food delivered to your doorstep. Fresh ingredients,
+              fast delivery, and amazing taste every time.
+            </p>
+
+            <div className="footer-social-icons">
+              <img src={assets.facebook_icon} alt="" />
+              <img src={assets.twitter_icon} alt="" />
+              <img src={assets.linkedin_icon} alt="" />
+            </div>
           </div>
+
+          {/* CENTER */}
+          <div className="footer-content-center">
+            <h2>Company</h2>
+            <ul>
+              <li>Home</li>
+              <li>About Us</li>
+              <li>Delivery</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+
+          {/* RIGHT */}
+          <div className="footer-content-right">
+            <h2>Contact</h2>
+            <ul>
+              <li>+91-72357-87323</li>
+              <li>food123@gmail.com</li>
+            </ul>
+          </div>
+
         </div>
-        <div className="footer-content-center">
-          <h2>Company</h2>
-          <ul>
-            <li>Home</li>
-            <li>About us</li>
-            <li>Delivery</li>
-            <li>Privacy policy</li>
-          </ul>
-        </div>
-        <div className="footer-content-right">
-          <h2>Get In Touch</h2>
-          <ul>
-            <li>+91-72357-87323</li>
-            <li>food123@gmail.com</li>
-          </ul>
-        </div>
+
+        <hr />
+
+        <p className="footer-copyright">
+          © 2026 Tomato.com — All Rights Reserved
+        </p>
+
       </div>
-      <hr />
-      <p className="footer-copyright">Copyright 2026 © Tomato.com - All Right Reserved</p>
+
     </div>
   )
 }

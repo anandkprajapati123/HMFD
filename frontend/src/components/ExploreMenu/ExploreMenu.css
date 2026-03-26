@@ -1,79 +1,84 @@
+/* SECTION */
 .explore-menu {
-  padding: 60px 8%;
-  text-align: center;
+  padding: 40px 0;
+  background: #f5f7f6;
 }
 
-.explore-menu h1 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #282C3F;
-  margin-bottom: 10px;
-}
-
-.explore-menu-text {
-  max-width: 600px;
+/* CONTAINER */
+.explore-menu-container {
+  width: 92%;
+  max-width: 1100px;
   margin: auto;
-  color: #686b78;
-  margin-bottom: 40px;
 }
 
-/* Category List */
+/* HEADER */
+.explore-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.explore-menu-header h1 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2e7d5b;
+}
+
+.explore-menu-header p {
+  display: none; /* not needed in your UI */
+}
+
+/* CATEGORY LIST */
 .explore-menu-list {
   display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 
-/* Each Category Item */
+/* HIDE SCROLLBAR */
+.explore-menu-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* PILLS */
 .explore-menu-list-item {
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.explore-menu-list-item img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  padding: 8px;
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-/* Active Category */
-.explore-menu-list-item img.active {
-  border: 3px solid #FC8019;
-  transform: scale(1.1);
-}
-
-.explore-menu-list-item:hover img {
-  transform: scale(1.08);
-}
-
-.explore-menu-list-item p {
-  margin-top: 10px;
-  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #e8f5ee;
+  color: #4caf7d;
+  font-size: 13px;
   font-weight: 500;
-  color: #282C3F;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
 }
 
-hr {
-  margin-top: 50px;
-  border: none;
-  height: 2px;
-  background: #eee;
+/* REMOVE IMAGE (NOT NEEDED) */
+.explore-menu-list-item img {
+  display: none;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .explore-menu-list {
-    gap: 20px;
+/* HOVER */
+.explore-menu-list-item:hover {
+  background: #d7efe3;
+}
+
+/* ACTIVE */
+.explore-menu-list-item.active {
+  background: #4caf7d;
+  color: white;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .explore-menu-header h1 {
+    font-size: 18px;
   }
 
-  .explore-menu-list-item img {
-    width: 75px;
-    height: 75px;
+  .explore-menu-list-item {
+    font-size: 12px;
+    padding: 7px 14px;
   }
 }
