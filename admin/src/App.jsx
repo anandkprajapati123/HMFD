@@ -1,27 +1,33 @@
-import React from 'react'
-import './index.css'
-import Navbar from './components/Navbar/Navbar'
-import Sidebar from './components/Sidebar/Sidebar'
-import { Routes, Route } from 'react-router-dom'
-import Add from './pages/Add/Add'
-import List from './pages/List/List'
-import Order from './pages/Order/Order'
+import React from "react";
+import "./index.css";
+import Navbar from "./components/Navbar/Navbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import { Routes, Route } from "react-router-dom";
+import Add from "./pages/Add/Add";
+import List from "./pages/List/List";
+import Order from "./pages/Order/Order";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-function App() {
+const  App = () => {
+
+  const url = "http://localhost:5000";
+
   return (
     <div>
-      <Navbar/>
+      <ToastContainer />
+      <Navbar />
       <hr />
       <div className="app-content">
-        <Sidebar/>
+        <Sidebar />
         <Routes>
-          <Route path="/add" element={<Add/>}></Route>
-          <Route path="/list" element={<List/>}></Route>
-          <Route path="/order" element={<Order/>}></Route>
+          <Route path="/add" element={<Add url={url}/>}></Route>
+          <Route path="/list" element={<List url={url}/>}></Route>
+          <Route path="/order" element={<Order url={url}/>}></Route>
         </Routes>
       </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,24 +1,36 @@
 // This file is responsible for creating a context that will be used to share the food list across the application. It uses the createContext function from React to create a new context and provides a StoreContextProvider component that wraps the children components and provides the food list as a value to the context. This allows any component that consumes the StoreContext to access the food list without having to pass it down through props.Used in main.jsx to wrap the App component and in FoodDisplay.jsx to access the food list.
 // Used in: main.jsx to wrap the App component and in FoodDisplay.jsx to access the food list.
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
 
 export const StoreContext = createContext(null);
 
-const StoreContextProvider = (props) => {
-  const [cartItems, setCartItems] = useState({});
+import axios from "axios";
 
-  const addToCart = (itemId) => {
+const StoreContextProvider = (props) => {
+
+  const [cartItems, setCartItems] = useState({});
+  const url = "http://localhost:5000";
+  const [token, setToken] = useState("");
+  const [food_list, setFoodList] = useState([]);
+
+  const addToCart = async (itemId) => {
     if (!cartItems[itemId]) {
       setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
     } else {
       setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
     }
+    if(token){
+      await axios.post(url+"/api/cart/add",{itemId},{headers:{token}});
+    }
   };
 
-  const removeFromCart = (itemId) => {
+  const removeFromCart = async (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+    if(token){
+      await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}});
+    }
   };
 
   const getTotalCartAmount = () => {
@@ -32,6 +44,27 @@ const StoreContextProvider = (props) => {
     return totalAmount;
   };
 
+  const fetchFoodList = async () => {
+    const response = await axios.get(url+"/api/food/list");
+    setFoodList(response.data.data);
+  }
+
+  const loadCartData = async (token) => {
+    const response = await axios.post(url+"/api/cart/get",{},{headers:{token}});
+    setCartItems(response.data.cartData);
+  }
+
+  useEffect(()=>{
+    async function loadData(){
+      await fetchFoodList();
+      if(localStorage.getItem("token")){
+        setToken(localStorage.getItem("token"));
+        await loadCartData(localStorage.getItem("token"));
+      }
+    }
+    loadData();
+  },[])
+
   const contextValue = {
     food_list,
     cartItems,
@@ -39,6 +72,9 @@ const StoreContextProvider = (props) => {
     addToCart,
     removeFromCart,
     getTotalCartAmount,
+    url,
+    token,
+    setToken
   };
 
   return (

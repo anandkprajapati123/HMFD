@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./Add.css";
 import { assets } from "../../assets/assets";
+import axios from "axios";
+import { toast } from "react-toastify";
 
-function Add() {
+const Add = ({ url }) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
     description: "",
     price: "",
-    category: "Salad",
+    category: "Indian Food",
   });
 
   const onChangeHandler = (event) => {
@@ -17,9 +19,32 @@ function Add() {
     setData((data) => ({ ...data, [name]: value }));
   };
 
+  const onSubmitHandler = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    formData.append("name", data.name);
+    formData.append("description", data.description);
+    formData.append("price", Number(data.price));
+    formData.append("category", data.category);
+    formData.append("image", image);
+    const response = await axios.post(`${url}/api/food/add`, formData);
+    if (response.data.success) {
+      setData({
+        name: "",
+        description: "",
+        price: "",
+        category: "Indian Food",
+      });
+      setImage(false);
+      toast.success(response.data.message);
+    } else {
+      toast.error(response.data.message);
+    }
+  };
+
   return (
     <div className="add">
-      <form className="flex-col">
+      <form className="flex-col" onSubmit={onSubmitHandler}>
         <div className="add-img-upload flex-col">
           <p>Upload Images</p>
           <label htmlFor="image">
@@ -62,9 +87,9 @@ function Add() {
           <div className="add-category flex-col">
             <p>Product category</p>
             <select onChange={onChangeHandler} name="category">
+              <option value="Indian Food">Indian Food</option>
               <option value="Salad">Salad</option>
-              <option value="Rolls">Rolls</option>
-              <option value="Deserts">Deserts</option>
+              <option value="Non Veg">Non Veg</option>
               <option value="SandWitch">SandWitch</option>
               <option value="Cake">Cake</option>
               <option value="Pure Veg">Pure Veg</option>
@@ -89,6 +114,6 @@ function Add() {
       </form>
     </div>
   );
-}
+};
 
 export default Add;
