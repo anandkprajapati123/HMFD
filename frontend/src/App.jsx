@@ -6,6 +6,8 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Cart from "./pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import Success from "./pages/Success/success";
+import MyOrders from "./pages/MyOrders/MyOrders";
 
 const App = () => {
 
@@ -21,6 +23,8 @@ const App = () => {
           <Route path="/login" element={<LoginPopup setShowLogin={setShowLogin}/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/order" element={<PlaceOrder />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/myorders" element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />

@@ -1,0 +1,22 @@
+.success-container {
+  padding: 60px;
+  text-align: center;
+}
+
+.success-title {
+  color: #4caf7d;
+}
+
+.success-buttons {
+  margin-top: 20px;
+}
+
+.success-buttons button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #4caf7d;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
