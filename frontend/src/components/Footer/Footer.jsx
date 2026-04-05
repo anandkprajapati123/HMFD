@@ -44,15 +44,12 @@ const Footer = () => {
           <div className="footer-content-right">
             <h2>Contact</h2>
             <ul>
-              <li>+91-72357-87323</li>
-              <li>food123@gmail.com</li>
+              <li>+91-9137184135</li>
+              <li>anandkprajapati011@gmail.com</li>
             </ul>
           </div>
-
         </div>
-
         <hr />
-
         <p className="footer-copyright">
           © 2026 Tomato.com — All Rights Reserved
         </p>
