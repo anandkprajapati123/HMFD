@@ -6,7 +6,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Cart from "./pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
-import Success from "./pages/Success/success";
+import Success from "./pages/Success/Success";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import { Navigate } from "react-router-dom";
 import { StoreContext } from "./Context/StoreContext";
