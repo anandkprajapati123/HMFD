@@ -78,7 +78,6 @@ const verifyOrder = async (req, res) => {
     const order = await orderModel.findOne({
       razorpayOrderId: razorpay_order_id,
     });
-    console.log("FOUND ORDER:", order);
 
     if (!order) {
       return res.status(404).json({
@@ -92,13 +91,15 @@ const verifyOrder = async (req, res) => {
     order.razorpayPaymentId = razorpay_payment_id;
     await order.save();
 
-    //DELETE FAILED ORDERS (ADD THIS HERE)
-    const result = await orderModel.deleteMany({
-      userId: req.userId,
-      payment: false
-    });
+    // clear cart After success
+    await userModel.findByIdAndUpdate(req.userId, { cartData: {} });
 
-    console.log("DELETED FAILED ORDERS:", result.deletedCount);
+    //DELETE FAILED ORDERS (ADD THIS HERE)
+    // const result = await orderModel.deleteMany({
+    //   userId: req.userId,
+    //   payment: false
+    // });
+    // console.log("DELETED FAILED ORDERS:", result.deletedCount);
 
     // FINAL RESPONSE
     res.json({ success: true, message: "Payment Verified Successfully" });
@@ -137,4 +138,31 @@ const deleteFailedOrders = async (req, res) => {
   }
 };
 
-export { placeOrder, verifyOrder, userOrders, deleteFailedOrders };
+// Listing orders for admin panel
+const listOrders = async (req,res) => {
+  try {
+    const orders= await orderModel.find({});
+    res.json({success:true,data:orders})
+  } catch (error) {
+    console.log(error)
+    res.json({success:false,message:"Error"});
+  }
+}
+
+// api for updating order status
+// update order status
+const updateStatus = async (req, res) => {
+  try {
+    const { orderId, status } = req.body;
+    if (!orderId || !status) {
+      return res.json({ success: false, message: "Missing fields" });
+    }
+    await orderModel.findByIdAndUpdate(orderId, { status });
+    res.json({ success: true, message: "Status Updated" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error updating status" });
+  }
+};
+
+export { placeOrder, verifyOrder, userOrders, deleteFailedOrders, listOrders, updateStatus };

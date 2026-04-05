@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { StoreContext } from "../../Context/StoreContext";
 import "./MyOrders.css";
+import { assets } from "../../assets/assets";
 
 const MyOrders = () => {
   const { url, token } = useContext(StoreContext);
@@ -9,15 +10,9 @@ const MyOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      console.log("TOKEN:", token);
-
       const res = await axios.post(
-        url + "/api/order/userorders",
-        {},
-        { headers: { token } }
+        url+"/api/order/userorders",{},{headers:{token}}
       );
-
-      console.log("API RESPONSE:", res.data);
 
       if (res.data.success) {
         setOrders(res.data.data);
@@ -43,6 +38,7 @@ const MyOrders = () => {
       ) : (
         orders.map((order, index) => (
           <div key={index} className="order-card">
+            <p><img src={assets.parcel_icon} alt="" /></p>
             <p><b>Order ID:</b> {order._id}</p>
             <p><b>Amount:</b> ₹{order.amount}</p>
             <p><b>Status:</b> {order.status}</p>
@@ -55,6 +51,7 @@ const MyOrders = () => {
                 </p>
               ))}
             </div>
+            <button onClick={fetchOrders}>Track Order</button>
           </div>
         ))
       )}

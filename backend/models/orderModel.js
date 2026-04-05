@@ -6,10 +6,10 @@ const orderSchema = new mongoose.Schema({
   amount:{type:Number,required:true},
   address:{type:Object,required:true},
   status:{type:String,default:"Food Processing"},
-  date:{type:Date,default:Date.now()},
   payment:{type:Boolean,default:false},
   razorpayOrderId:{type:String},
-  razorpayPaymentId:{type:String}
+  razorpayPaymentId:{type:String},
+  date:{type:Date,default:Date.now()},
 })
 
 const orderModel = mongoose.models.order || mongoose.model("order",orderSchema);

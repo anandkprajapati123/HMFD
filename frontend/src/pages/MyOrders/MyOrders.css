@@ -18,3 +18,25 @@
   font-size: 14px;
   color: #555;
 }
+button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #4c4c4c9c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .my-orders {
+    padding: 20px;
+  }
+  .order-card {
+    padding: 10px;
+  }
+  .order-item {
+    font-size: 12px;
+  }
+  
+}

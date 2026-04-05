@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -8,10 +8,13 @@ import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import Success from "./pages/Success/success";
 import MyOrders from "./pages/MyOrders/MyOrders";
+import { Navigate } from "react-router-dom";
+import { StoreContext } from "./Context/StoreContext";
 
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false);
+  const { token, getTotalCartAmount } = useContext(StoreContext);
 
   return (
     <>
@@ -22,7 +25,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPopup setShowLogin={setShowLogin}/>} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={<PlaceOrder />} />
+          <Route path="/order" element={token && getTotalCartAmount()>0?<PlaceOrder />:<Navigate to="/cart" />} />
           <Route path="/success" element={<Success />} />
           <Route path="/myorders" element={<MyOrders />} />
         </Routes>

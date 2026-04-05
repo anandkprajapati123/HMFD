@@ -77,28 +77,44 @@ const PlaceOrder = () => {
               );
 
               if (verifyRes.data.success) {
+                // delete-failed separate try
+                try {
+                  await axios.post(
+                    url + "/api/order/delete-failed",
+                    {},
+                    { headers: { token } },
+                  );
+                } catch (err) {
+                  console.log("DELETE FAILED ERROR:", err);
+                }
+
+                alert("Payment Verified");
+                window.location.href = "/success";
+              } else {
+                alert("Payment verification failed");
+              }
+            } catch (error) {
+              console.log("VERIFY ERROR:", error);
+              alert("Verification error");
+            }
+          },
+          modal: {
+            ondismiss: async function () {
+              try {
+                // delete failed order
                 await axios.post(
                   url + "/api/order/delete-failed",
                   {},
                   { headers: { token } },
                 );
-                alert("Payment Verified");
-                setTimeout(() => {
-                  window.location.href = "/myorders";
-                }, 1000);
-                window.location.href = "/success?refresh=true";
-              } else {
-                alert("Payment verification failed");
-              }
-            } catch (error) {
-              console.log(error);
-              alert("Verification error");
-            }
-          },
 
-          modal: {
-            ondismiss: function () {
-              alert("Payment Cancelled");
+                alert("Payment Cancelled");
+
+                // redirect to home
+                window.location.href = "/";
+              } catch (error) {
+                console.log("DELETE ERROR:", error);
+              }
             },
           },
 
@@ -107,7 +123,6 @@ const PlaceOrder = () => {
             email: data.email,
             contact: data.phone,
           },
-
           theme: { color: "#4caf7d" },
         };
 
