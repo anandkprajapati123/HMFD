@@ -41,7 +41,7 @@ const placeOrder = async (req, res) => {
     await orderModel.deleteMany({
       userId: req.userId,
       payment: false,
-      date: { $lt: new Date(Date.now() - 30 * 60 * 1000) } // 30 min old
+      date: { $lt: new Date(Date.now() - 30 * 60 * 1000) }, // 30 min old
     });
 
     // Clear cart data in user model
@@ -65,14 +65,19 @@ const verifyOrder = async (req, res) => {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
       req.body;
     const sign = razorpay_order_id + "|" + razorpay_payment_id;
-    const expectedSign = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET_KEY).update(sign).digest("hex");
+    const expectedSign = crypto
+      .createHmac("sha256", process.env.RAZORPAY_SECRET_KEY)
+      .update(sign)
+      .digest("hex");
 
     // console.log("VERIFY HIT");
     // console.log("BODY:", req.body);
     console.log("EXPECTED:", expectedSign);
     console.log("RECEIVED:", razorpay_signature);
     if (expectedSign !== razorpay_signature) {
-      return res.status(400).json({ success: false, message: "Invalid Signature" });
+      return res
+        .status(400)
+        .json({ success: false, message: "Invalid Signature" });
     }
     // Find order
     const order = await orderModel.findOne({
@@ -92,7 +97,7 @@ const verifyOrder = async (req, res) => {
     await order.save();
 
     // clear cart After success
-    await userModel.findByIdAndUpdate(req.userId, { cartData: {} });
+    await userModel.findByIdAndUpdate(order.userId, { cartData: {} });
 
     //DELETE FAILED ORDERS (ADD THIS HERE)
     // const result = await orderModel.deleteMany({
@@ -103,7 +108,6 @@ const verifyOrder = async (req, res) => {
 
     // FINAL RESPONSE
     res.json({ success: true, message: "Payment Verified Successfully" });
-
   } catch (error) {
     console.log("VERIFY ERROR:", error);
     res.status(500).json({ success: false, message: "Verification Failed" });
@@ -113,7 +117,8 @@ const verifyOrder = async (req, res) => {
 // Get orders of a user
 const userOrders = async (req, res) => {
   try {
-    const orders = await orderModel.find({ userId: req.userId, payment: true });
+    console.log("USER ID:", req.userId);
+    const orders = await orderModel.find({ userId: req.userId.toString(), payment: true });
     res.json({ success: true, data: orders });
   } catch (error) {
     console.log(error);
@@ -123,31 +128,42 @@ const userOrders = async (req, res) => {
 
 const deleteFailedOrders = async (req, res) => {
   try {
-    const result = await orderModel.deleteMany({
-      userId: req.userId,
-      payment: false
+    const order = await orderModel.findOne({
+      razorpayOrderId: razorpay_order_id,
+    });
+
+    if (!order) {
+      return res.status(404).json({
+        success: false,
+        message: "Order not found",
+      });
+    }
+
+    // use order.userId instead of req.userId
+    await orderModel.deleteMany({
+      userId: order.userId,
+      payment: false,
     });
 
     res.json({
       success: true,
-      deleted: result.deletedCount
+      deleted: result.deletedCount,
     });
-
   } catch (error) {
     res.json({ success: false });
   }
 };
 
 // Listing orders for admin panel
-const listOrders = async (req,res) => {
+const listOrders = async (req, res) => {
   try {
-    const orders= await orderModel.find({});
-    res.json({success:true,data:orders})
+    const orders = await orderModel.find({});
+    res.json({ success: true, data: orders });
   } catch (error) {
-    console.log(error)
-    res.json({success:false,message:"Error"});
+    console.log(error);
+    res.json({ success: false, message: "Error" });
   }
-}
+};
 
 // api for updating order status
 // update order status
@@ -165,4 +181,11 @@ const updateStatus = async (req, res) => {
   }
 };
 
-export { placeOrder, verifyOrder, userOrders, deleteFailedOrders, listOrders, updateStatus };
+export {
+  placeOrder,
+  verifyOrder,
+  userOrders,
+  deleteFailedOrders,
+  listOrders,
+  updateStatus,
+};
