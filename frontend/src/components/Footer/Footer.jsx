@@ -51,7 +51,7 @@ const Footer = () => {
         </div>
         <hr />
         <p className="footer-copyright">
-          © 2026 Tomato.com — All Rights Reserved
+          © 2026 FreshThali.com — All Rights Reserved
         </p>
 
       </div>

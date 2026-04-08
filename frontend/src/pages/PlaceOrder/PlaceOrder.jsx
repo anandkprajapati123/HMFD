@@ -65,7 +65,7 @@ const PlaceOrder = () => {
           order_id: order.id,
 
           handler: async function (response) {
-            console.log("HANDLER RUNNING ✅");
+            console.log("HANDLER RUNNING");
 
             try {
               console.log("SENDING TO VERIFY:", {
@@ -82,9 +82,7 @@ const PlaceOrder = () => {
                   razorpay_signature: response.razorpay_signature,
                 },
                 {
-                  headers: {
-                    Authorization: `Bearer ${token}`,
-                  },
+                  headers: { Authorization: `Bearer ${token}` },
                 },
               );
 
@@ -95,9 +93,7 @@ const PlaceOrder = () => {
                   url + "/api/order/delete-failed",
                   {},
                   {
-                    headers: {
-                      Authorization: `Bearer ${token}`,
-                    },
+                    headers: { Authorization: `Bearer ${token}` },
                   },
                 );
 

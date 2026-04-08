@@ -50,8 +50,6 @@ const LoginPopup = ({ setShowLogin }) => {
 
   }
 
-
-
   return (
     <div className="login-popup" onClick={() => setShowLogin(false)}>
       <form onSubmit={onLogin} className="login-popup-container" onClick={(e) => e.stopPropagation()}>

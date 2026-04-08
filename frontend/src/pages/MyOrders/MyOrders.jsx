@@ -10,7 +10,7 @@ const MyOrders = () => {
   
   const fetchOrders = async () => {
     try {
-      const res = await axios.post(url+"/api/order/userorders", {}, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.post(url+"/api/order/userorders", {}, { headers: { Authorization: `Bearer ${token}` }});
       console.log("RESPONSE:", res.data);
 
       if (res.data.success) {
