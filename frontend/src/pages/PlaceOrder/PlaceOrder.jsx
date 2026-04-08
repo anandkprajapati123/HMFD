@@ -50,7 +50,7 @@ const PlaceOrder = () => {
     // send data to our API
     try {
       let response = await axios.post(url + "/api/order/place", orderData, {
-        headers: { token },
+        headers: { Authorization: `Bearer ${token}` },
       });
 
       if (response.data.success) {
@@ -65,7 +65,15 @@ const PlaceOrder = () => {
           order_id: order.id,
 
           handler: async function (response) {
+            console.log("HANDLER RUNNING ✅");
+
             try {
+              console.log("SENDING TO VERIFY:", {
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+              });
+
               const verifyRes = await axios.post(
                 url + "/api/order/verify",
                 {
@@ -73,20 +81,25 @@ const PlaceOrder = () => {
                   razorpay_payment_id: response.razorpay_payment_id,
                   razorpay_signature: response.razorpay_signature,
                 },
-                { headers: { token } },
+                {
+                  headers: {
+                    Authorization: `Bearer ${token}`,
+                  },
+                },
               );
 
+              console.log("VERIFY RESPONSE:", verifyRes.data);
+
               if (verifyRes.data.success) {
-                // delete-failed separate try
-                try {
-                  await axios.post(
-                    url + "/api/order/delete-failed",
-                    {},
-                    { headers: { token } },
-                  );
-                } catch (err) {
-                  console.log("DELETE FAILED ERROR:", err);
-                }
+                await axios.post(
+                  url + "/api/order/delete-failed",
+                  {},
+                  {
+                    headers: {
+                      Authorization: `Bearer ${token}`,
+                    },
+                  },
+                );
 
                 alert("Payment Verified");
                 window.location.href = "/success";
@@ -95,6 +108,7 @@ const PlaceOrder = () => {
               }
             } catch (error) {
               console.log("VERIFY ERROR:", error);
+              console.log("VERIFY ERROR RESPONSE:", error.response?.data);
               alert("Verification error");
             }
           },
@@ -105,7 +119,7 @@ const PlaceOrder = () => {
                 await axios.post(
                   url + "/api/order/delete-failed",
                   {},
-                  { headers: { token } },
+                  { headers: { Authorization: `Bearer ${token}` } },
                 );
 
                 alert("Payment Cancelled");

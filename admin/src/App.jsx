@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const  App = () => {
 
-  const url = "https://food-delivery-back-gu3y.onrender.com";
+  const url = "http://localhost:5000";
 
   return (
     <div>

@@ -7,12 +7,11 @@ import { assets } from "../../assets/assets";
 const MyOrders = () => {
   const { url, token } = useContext(StoreContext);
   const [orders, setOrders] = useState([]);
-
+  
   const fetchOrders = async () => {
     try {
-      const res = await axios.post(
-        url+"/api/order/userorders",{},{headers:{token}}
-      );
+      const res = await axios.post(url+"/api/order/userorders", {}, { headers: { Authorization: `Bearer ${token}` } });
+      console.log("RESPONSE:", res.data);
 
       if (res.data.success) {
         setOrders(res.data.data);

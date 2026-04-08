@@ -7,9 +7,11 @@ import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginPopup = ({ setShowLogin }) => {
   const { url,setToken } = useContext(StoreContext);
+  const navigate = useNavigate();
 
   const [currState, setCurrState] = useState("Login");
   const [data, setData] = useState({
@@ -23,7 +25,7 @@ const LoginPopup = ({ setShowLogin }) => {
     const value = event.target.value;
     setData((data) => ({ ...data, [name]: value }));
   };
-
+  
   const onLogin = async (event) => {
     event.preventDefault();
     let newUrl = url;
@@ -40,7 +42,7 @@ const LoginPopup = ({ setShowLogin }) => {
       setToken(response.data.token);
       localStorage.setItem("token",response.data.token);
       setShowLogin(false);
-      window.location.reload();
+      navigate("/");
     }
     else{
       alert(response.data.message);

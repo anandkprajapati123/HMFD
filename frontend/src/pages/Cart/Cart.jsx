@@ -31,7 +31,7 @@ const Cart = () => {
       <div className="cart-container">
         <div className="cart-items">
           {food_list.map((item) => {
-            if (cartItems[item._id] > 0) {
+            if (cartItems?.[item._id] > 0) {
               return (
                 <div key={item._id} className="cart-item">
                   <img src={url + "/images/" + item.image} alt="" />
