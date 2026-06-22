@@ -6,8 +6,8 @@ import "./PlaceOrder.css";
 import { StoreContext } from "../../Context/StoreContext";
 import axios from "axios";
 
-const PlaceOrder = () => {
-  const { getTotalCartAmount, token, food_list, cartItems, url } =
+const PlaceOrder = ({ setShowLogin }) => {
+  const { getTotalCartAmount, token, setToken, food_list, cartItems, url } =
     useContext(StoreContext);
 
   const [data, setData] = useState({
@@ -30,6 +30,14 @@ const PlaceOrder = () => {
 
   const placeOrder = async (event) => {
     event.preventDefault();
+
+    // Guard: must be logged in
+    if (!token) {
+      alert("Please login to place an order.");
+      if (setShowLogin) setShowLogin(true);
+      return;
+    }
+
     const orderItems = [];
     food_list.forEach((item) => {
       if (cartItems[item._id] > 0) {
@@ -52,6 +60,19 @@ const PlaceOrder = () => {
       let response = await axios.post(url + "/api/order/place", orderData, {
         headers: { Authorization: `Bearer ${token}` },
       });
+
+      // Session expired — clear token and prompt re-login
+      if (
+        !response.data.success &&
+        (response.data.message === "Invalid Token" ||
+          response.data.message === "Not Authorized Login Again!")
+      ) {
+        localStorage.removeItem("token");
+        setToken("");
+        alert("Your session has expired. Please login again.");
+        if (setShowLogin) setShowLogin(true);
+        return;
+      }
 
       if (response.data.success) {
         const { order, key } = response.data;
@@ -105,7 +126,8 @@ const PlaceOrder = () => {
             } catch (error) {
               console.log("VERIFY ERROR:", error);
               console.log("VERIFY ERROR RESPONSE:", error.response?.data);
-              alert("Verification error");
+              const msg = error.response?.data?.message || error.message || "Verification error";
+              alert("Verification failed: " + msg);
             }
           },
           modal: {

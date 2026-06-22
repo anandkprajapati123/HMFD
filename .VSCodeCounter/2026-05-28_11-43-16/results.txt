@@ -1,0 +1,150 @@
+Date : 2026-05-28 11:43:16
+Directory : c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD
+Total : 78 files,  12494 codes, 176 comments, 531 blanks, all 13201 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| JSON           |          6 |      9,053 |          0 |          6 |      9,059 |
+| JavaScript JSX |         23 |      1,235 |         41 |        208 |      1,484 |
+| PostCSS        |         21 |      1,214 |         96 |        185 |      1,495 |
+| JavaScript     |         20 |        920 |         39 |        113 |      1,072 |
+| XML            |          4 |         27 |          0 |          1 |         28 |
+| HTML           |          2 |         27 |          0 |          2 |         29 |
+| Markdown       |          2 |         18 |          0 |         16 |         34 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                            | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                               |         78 |     12,494 |        176 |        531 |     13,201 |
+| admin                                                                                                           |         22 |      4,547 |          2 |         77 |      4,626 |
+| admin (Files)                                                                                                   |          6 |      3,934 |          1 |         15 |      3,950 |
+| admin\public                                                                                                    |          2 |         25 |          0 |          1 |         26 |
+| admin\src                                                                                                       |         14 |        588 |          1 |         61 |        650 |
+| admin\src (Files)                                                                                               |          3 |         69 |          1 |         14 |         84 |
+| admin\src\assets                                                                                                |          1 |         15 |          0 |          3 |         18 |
+| admin\src\components                                                                                            |          4 |         83 |          0 |          9 |         92 |
+| admin\src\components\Navbar                                                                                     |          2 |         25 |          0 |          4 |         29 |
+| admin\src\components\Sidebar                                                                                    |          2 |         58 |          0 |          5 |         63 |
+| admin\src\pages                                                                                                 |          6 |        421 |          0 |         35 |        456 |
+| admin\src\pages\Add                                                                                             |          2 |        149 |          0 |          6 |        155 |
+| admin\src\pages\List                                                                                            |          2 |        103 |          0 |         12 |        115 |
+| admin\src\pages\Order                                                                                           |          2 |        169 |          0 |         17 |        186 |
+| backend                                                                                                         |         16 |      2,322 |         37 |         98 |      2,457 |
+| backend (Files)                                                                                                 |          3 |      1,919 |          4 |          9 |      1,932 |
+| backend\config                                                                                                  |          1 |          4 |          0 |          1 |          5 |
+| backend\controllers                                                                                             |          4 |        306 |         30 |         56 |        392 |
+| backend\middleware                                                                                              |          1 |         17 |          0 |          6 |         23 |
+| backend\models                                                                                                  |          3 |         36 |          1 |          9 |         46 |
+| backend\routes                                                                                                  |          4 |         40 |          2 |         17 |         59 |
+| frontend                                                                                                        |         40 |      5,625 |        137 |        356 |      6,118 |
+| frontend (Files)                                                                                                |          6 |      3,343 |          1 |         15 |      3,359 |
+| frontend\public                                                                                                 |          1 |          1 |          0 |          0 |          1 |
+| frontend\src                                                                                                    |         33 |      2,281 |        136 |        341 |      2,758 |
+| frontend\src (Files)                                                                                            |          4 |        103 |          0 |         14 |        117 |
+| frontend\src\Context                                                                                            |          1 |        104 |          2 |         18 |        124 |
+| frontend\src\assets                                                                                             |          2 |        405 |          0 |          6 |        411 |
+| frontend\src\components                                                                                         |         16 |        975 |         97 |        187 |      1,259 |
+| frontend\src\components\ExploreMenu                                                                             |          2 |         92 |         12 |         17 |        121 |
+| frontend\src\components\FoodDisplay                                                                             |          2 |         80 |          9 |         15 |        104 |
+| frontend\src\components\FoodItem                                                                                |          2 |        142 |         13 |         24 |        179 |
+| frontend\src\components\Footer                                                                                  |          2 |        130 |         18 |         28 |        176 |
+| frontend\src\components\Header                                                                                  |          2 |         91 |         12 |         16 |        119 |
+| frontend\src\components\LoginPopup                                                                              |          2 |        172 |         12 |         28 |        212 |
+| frontend\src\components\Navbar                                                                                  |          2 |        173 |         16 |         34 |        223 |
+| frontend\src\components\Offers                                                                                  |          2 |         95 |          5 |         25 |        125 |
+| frontend\src\pages                                                                                              |         10 |        694 |         37 |        116 |        847 |
+| frontend\src\pages\Cart                                                                                         |          2 |        219 |         18 |         40 |        277 |
+| frontend\src\pages\Home                                                                                         |          2 |         18 |          2 |          7 |         27 |
+| frontend\src\pages\MyOrders                                                                                     |          2 |         89 |          0 |         14 |        103 |
+| frontend\src\pages\PlaceOrder                                                                                   |          2 |        332 |         17 |         47 |        396 |
+| frontend\src\pages\Success                                                                                      |          2 |         36 |          0 |          8 |         44 |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                        | language       | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\README.md                                     | Markdown       |          9 |          0 |          8 |         17 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\eslint.config.js                              | JavaScript     |         28 |          0 |          2 |         30 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\index.html                                    | HTML           |         13 |          0 |          1 |         14 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\package-lock.json                             | JSON           |      3,847 |          0 |          1 |      3,848 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\package.json                                  | JSON           |         32 |          0 |          1 |         33 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\public\favicon.svg                            | XML            |          1 |          0 |          0 |          1 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\public\icons.svg                              | XML            |         24 |          0 |          1 |         25 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\App.jsx                                   | JavaScript JSX |         29 |          0 |          5 |         34 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\assets\assets.js                          | JavaScript     |         15 |          0 |          3 |         18 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Navbar\Navbar.css              | PostCSS        |         13 |          0 |          2 |         15 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Navbar\Navbar.jsx              | JavaScript JSX |         12 |          0 |          2 |         14 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Sidebar\Sidebar.jsx            | JavaScript JSX |         25 |          0 |          2 |         27 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Sidebar\Sidebsr.css            | PostCSS        |         33 |          0 |          3 |         36 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\index.css                                 | PostCSS        |         30 |          1 |          7 |         38 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\main.jsx                                  | JavaScript JSX |         10 |          0 |          2 |         12 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Add\Add.css                         | PostCSS        |         35 |          0 |          0 |         35 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Add\Add.jsx                         | JavaScript JSX |        114 |          0 |          6 |        120 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\List\List.css                       | PostCSS        |         47 |          0 |          5 |         52 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\List\List.jsx                       | JavaScript JSX |         56 |          0 |          7 |         63 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Order\Order.css                     | PostCSS        |         80 |          0 |          2 |         82 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Order\Order.jsx                     | JavaScript JSX |         89 |          0 |         15 |        104 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\vite.config.js                                | JavaScript     |          5 |          1 |          2 |          8 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\config\db.js                                | JavaScript     |          4 |          0 |          1 |          5 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\cartController.js               | JavaScript     |         66 |          4 |         12 |         82 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\foodController.js               | JavaScript     |         45 |          3 |          6 |         54 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\orderController.js              | JavaScript     |        134 |         18 |         23 |        175 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\userController.js               | JavaScript     |         61 |          5 |         15 |         81 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\middleware\auth.js                          | JavaScript     |         17 |          0 |          6 |         23 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\models\foodModel.js                         | JavaScript     |         10 |          1 |          3 |         14 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\models\orderModel.js                        | JavaScript     |         14 |          0 |          3 |         17 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\models\userModel.js                         | JavaScript     |         12 |          0 |          3 |         15 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\package-lock.json                           | JSON           |      1,859 |          0 |          1 |      1,860 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\package.json                                | JSON           |         28 |          0 |          1 |         29 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\cartRoute.js                         | JavaScript     |          8 |          1 |          3 |         12 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\foodRoute.js                         | JavaScript     |         15 |          1 |          8 |         24 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\orderRoute.js                        | JavaScript     |         11 |          0 |          3 |         14 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\userRoute.js                         | JavaScript     |          6 |          0 |          3 |          9 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\server.js                                   | JavaScript     |         32 |          4 |          7 |         43 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\README.md                                  | Markdown       |          9 |          0 |          8 |         17 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\eslint.config.js                           | JavaScript     |         28 |          0 |          2 |         30 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\index.html                                 | HTML           |         14 |          0 |          1 |         15 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\package-lock.json                          | JSON           |      3,258 |          0 |          1 |      3,259 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\package.json                               | JSON           |         29 |          0 |          1 |         30 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\public\vite.svg                            | XML            |          1 |          0 |          0 |          1 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\App.css                                | PostCSS        |         37 |          0 |          6 |         43 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\App.jsx                                | JavaScript JSX |         34 |          0 |          5 |         39 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\Context\StoreContext.jsx               | JavaScript JSX |        104 |          2 |         18 |        124 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\assets\assets.js                       | JavaScript     |        404 |          0 |          6 |        410 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\assets\react.svg                       | XML            |          1 |          0 |          0 |          1 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\ExploreMenu\ExploreMenu.css | PostCSS        |         62 |         10 |         12 |         84 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\ExploreMenu\ExploreMenu.jsx | JavaScript JSX |         30 |          2 |          5 |         37 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodDisplay\FoodDisplay.css | PostCSS        |         52 |          7 |         10 |         69 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodDisplay\FoodDisplay.jsx | JavaScript JSX |         28 |          2 |          5 |         35 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodItem\FoodItem.css       | PostCSS        |         89 |         10 |         15 |        114 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodItem\FoodItem.jsx       | JavaScript JSX |         53 |          3 |          9 |         65 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Footer\Footer.css           | PostCSS        |         84 |         13 |         16 |        113 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Footer\Footer.jsx           | JavaScript JSX |         46 |          5 |         12 |         63 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Header\Header.css           | PostCSS        |         73 |         10 |         12 |         95 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Header\Header.jsx           | JavaScript JSX |         18 |          2 |          4 |         24 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\LoginPopup\LoginPopup.css   | PostCSS        |         95 |          9 |         13 |        117 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\LoginPopup\LoginPopup.jsx   | JavaScript JSX |         77 |          3 |         15 |         95 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Navbar\Navbar.css           | PostCSS        |        117 |          8 |         21 |        146 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Navbar\Navbar.jsx           | JavaScript JSX |         56 |          8 |         13 |         77 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Offers\Offers.css           | PostCSS        |         63 |          0 |         11 |         74 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Offers\Offers.jsx           | JavaScript JSX |         32 |          5 |         14 |         51 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\index.css                              | PostCSS        |         19 |          0 |          1 |         20 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\main.jsx                               | JavaScript JSX |         13 |          0 |          2 |         15 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Cart\Cart.css                    | PostCSS        |        140 |         16 |         25 |        181 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Cart\Cart.jsx                    | JavaScript JSX |         79 |          2 |         15 |         96 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Home\Home.css                    | PostCSS        |          0 |          0 |          1 |          1 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Home\Home.jsx                    | JavaScript JSX |         18 |          2 |          6 |         26 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\MyOrders\MyOrders.css            | PostCSS        |         37 |          0 |          5 |         42 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\MyOrders\MyOrders.jsx            | JavaScript JSX |         52 |          0 |          9 |         61 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\PlaceOrder\PlaceOrder.css        | PostCSS        |         89 |         12 |         15 |        116 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\PlaceOrder\PlaceOrder.jsx        | JavaScript JSX |        243 |          5 |         32 |        280 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Success\Success.css              | PostCSS        |         19 |          0 |          3 |         22 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Success\Success.jsx              | JavaScript JSX |         17 |          0 |          5 |         22 |
+| c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\vite.config.js                             | JavaScript     |          5 |          1 |          2 |          8 |
+| Total                                                                                                           |                |     12,494 |        176 |        531 |     13,201 |
++-----------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

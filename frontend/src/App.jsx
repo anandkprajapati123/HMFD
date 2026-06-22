@@ -25,7 +25,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LoginPopup setShowLogin={setShowLogin}/>} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/order" element={token && getTotalCartAmount()>0?<PlaceOrder />:<Navigate to="/cart" />} />
+          <Route path="/order" element={token && getTotalCartAmount()>0?<PlaceOrder setShowLogin={setShowLogin} />:<Navigate to="/cart" />} />
           <Route path="/success" element={<Success />} />
           <Route path="/myorders" element={<MyOrders />} />
         </Routes>

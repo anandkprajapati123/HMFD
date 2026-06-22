@@ -1,0 +1,80 @@
+"filename", "language", "JavaScript", "PostCSS", "JavaScript JSX", "Markdown", "XML", "JSON", "HTML", "comment", "blank", "total"
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\README.md", "Markdown", 0, 0, 0, 9, 0, 0, 0, 0, 8, 17
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\eslint.config.js", "JavaScript", 28, 0, 0, 0, 0, 0, 0, 0, 2, 30
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\index.html", "HTML", 0, 0, 0, 0, 0, 0, 13, 0, 1, 14
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\package-lock.json", "JSON", 0, 0, 0, 0, 0, 3847, 0, 0, 1, 3848
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\package.json", "JSON", 0, 0, 0, 0, 0, 32, 0, 0, 1, 33
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\public\favicon.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\public\icons.svg", "XML", 0, 0, 0, 0, 24, 0, 0, 0, 1, 25
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\App.jsx", "JavaScript JSX", 0, 0, 29, 0, 0, 0, 0, 0, 5, 34
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\assets\assets.js", "JavaScript", 15, 0, 0, 0, 0, 0, 0, 0, 3, 18
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Navbar\Navbar.css", "PostCSS", 0, 13, 0, 0, 0, 0, 0, 0, 2, 15
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Navbar\Navbar.jsx", "JavaScript JSX", 0, 0, 12, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Sidebar\Sidebar.jsx", "JavaScript JSX", 0, 0, 25, 0, 0, 0, 0, 0, 2, 27
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\components\Sidebar\Sidebsr.css", "PostCSS", 0, 33, 0, 0, 0, 0, 0, 0, 3, 36
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\index.css", "PostCSS", 0, 30, 0, 0, 0, 0, 0, 1, 7, 38
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\main.jsx", "JavaScript JSX", 0, 0, 10, 0, 0, 0, 0, 0, 2, 12
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Add\Add.css", "PostCSS", 0, 35, 0, 0, 0, 0, 0, 0, 0, 35
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Add\Add.jsx", "JavaScript JSX", 0, 0, 114, 0, 0, 0, 0, 0, 6, 120
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\List\List.css", "PostCSS", 0, 47, 0, 0, 0, 0, 0, 0, 5, 52
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\List\List.jsx", "JavaScript JSX", 0, 0, 56, 0, 0, 0, 0, 0, 7, 63
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Order\Order.css", "PostCSS", 0, 80, 0, 0, 0, 0, 0, 0, 2, 82
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\src\pages\Order\Order.jsx", "JavaScript JSX", 0, 0, 89, 0, 0, 0, 0, 0, 15, 104
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\admin\vite.config.js", "JavaScript", 5, 0, 0, 0, 0, 0, 0, 1, 2, 8
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\config\db.js", "JavaScript", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\cartController.js", "JavaScript", 66, 0, 0, 0, 0, 0, 0, 4, 12, 82
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\foodController.js", "JavaScript", 45, 0, 0, 0, 0, 0, 0, 3, 6, 54
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\orderController.js", "JavaScript", 134, 0, 0, 0, 0, 0, 0, 18, 23, 175
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\controllers\userController.js", "JavaScript", 61, 0, 0, 0, 0, 0, 0, 5, 15, 81
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\middleware\auth.js", "JavaScript", 17, 0, 0, 0, 0, 0, 0, 0, 6, 23
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\models\foodModel.js", "JavaScript", 10, 0, 0, 0, 0, 0, 0, 1, 3, 14
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\models\orderModel.js", "JavaScript", 14, 0, 0, 0, 0, 0, 0, 0, 3, 17
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\models\userModel.js", "JavaScript", 12, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\package-lock.json", "JSON", 0, 0, 0, 0, 0, 1859, 0, 0, 1, 1860
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\package.json", "JSON", 0, 0, 0, 0, 0, 28, 0, 0, 1, 29
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\cartRoute.js", "JavaScript", 8, 0, 0, 0, 0, 0, 0, 1, 3, 12
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\foodRoute.js", "JavaScript", 15, 0, 0, 0, 0, 0, 0, 1, 8, 24
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\orderRoute.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\routes\userRoute.js", "JavaScript", 6, 0, 0, 0, 0, 0, 0, 0, 3, 9
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\backend\server.js", "JavaScript", 32, 0, 0, 0, 0, 0, 0, 4, 7, 43
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\README.md", "Markdown", 0, 0, 0, 9, 0, 0, 0, 0, 8, 17
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\eslint.config.js", "JavaScript", 28, 0, 0, 0, 0, 0, 0, 0, 2, 30
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\index.html", "HTML", 0, 0, 0, 0, 0, 0, 14, 0, 1, 15
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\package-lock.json", "JSON", 0, 0, 0, 0, 0, 3258, 0, 0, 1, 3259
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\package.json", "JSON", 0, 0, 0, 0, 0, 29, 0, 0, 1, 30
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\public\vite.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\App.css", "PostCSS", 0, 37, 0, 0, 0, 0, 0, 0, 6, 43
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\App.jsx", "JavaScript JSX", 0, 0, 34, 0, 0, 0, 0, 0, 5, 39
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\Context\StoreContext.jsx", "JavaScript JSX", 0, 0, 104, 0, 0, 0, 0, 2, 18, 124
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\assets\assets.js", "JavaScript", 404, 0, 0, 0, 0, 0, 0, 0, 6, 410
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\assets\react.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\ExploreMenu\ExploreMenu.css", "PostCSS", 0, 62, 0, 0, 0, 0, 0, 10, 12, 84
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\ExploreMenu\ExploreMenu.jsx", "JavaScript JSX", 0, 0, 30, 0, 0, 0, 0, 2, 5, 37
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodDisplay\FoodDisplay.css", "PostCSS", 0, 52, 0, 0, 0, 0, 0, 7, 10, 69
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodDisplay\FoodDisplay.jsx", "JavaScript JSX", 0, 0, 28, 0, 0, 0, 0, 2, 5, 35
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodItem\FoodItem.css", "PostCSS", 0, 89, 0, 0, 0, 0, 0, 10, 15, 114
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\FoodItem\FoodItem.jsx", "JavaScript JSX", 0, 0, 53, 0, 0, 0, 0, 3, 9, 65
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Footer\Footer.css", "PostCSS", 0, 84, 0, 0, 0, 0, 0, 13, 16, 113
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Footer\Footer.jsx", "JavaScript JSX", 0, 0, 46, 0, 0, 0, 0, 5, 12, 63
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Header\Header.css", "PostCSS", 0, 73, 0, 0, 0, 0, 0, 10, 12, 95
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Header\Header.jsx", "JavaScript JSX", 0, 0, 18, 0, 0, 0, 0, 2, 4, 24
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\LoginPopup\LoginPopup.css", "PostCSS", 0, 95, 0, 0, 0, 0, 0, 9, 13, 117
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\LoginPopup\LoginPopup.jsx", "JavaScript JSX", 0, 0, 77, 0, 0, 0, 0, 3, 15, 95
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Navbar\Navbar.css", "PostCSS", 0, 117, 0, 0, 0, 0, 0, 8, 21, 146
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Navbar\Navbar.jsx", "JavaScript JSX", 0, 0, 56, 0, 0, 0, 0, 8, 13, 77
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Offers\Offers.css", "PostCSS", 0, 63, 0, 0, 0, 0, 0, 0, 11, 74
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\components\Offers\Offers.jsx", "JavaScript JSX", 0, 0, 32, 0, 0, 0, 0, 5, 14, 51
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\index.css", "PostCSS", 0, 19, 0, 0, 0, 0, 0, 0, 1, 20
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\main.jsx", "JavaScript JSX", 0, 0, 13, 0, 0, 0, 0, 0, 2, 15
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Cart\Cart.css", "PostCSS", 0, 140, 0, 0, 0, 0, 0, 16, 25, 181
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Cart\Cart.jsx", "JavaScript JSX", 0, 0, 79, 0, 0, 0, 0, 2, 15, 96
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Home\Home.css", "PostCSS", 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Home\Home.jsx", "JavaScript JSX", 0, 0, 18, 0, 0, 0, 0, 2, 6, 26
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\MyOrders\MyOrders.css", "PostCSS", 0, 37, 0, 0, 0, 0, 0, 0, 5, 42
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\MyOrders\MyOrders.jsx", "JavaScript JSX", 0, 0, 52, 0, 0, 0, 0, 0, 9, 61
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\PlaceOrder\PlaceOrder.css", "PostCSS", 0, 89, 0, 0, 0, 0, 0, 12, 15, 116
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\PlaceOrder\PlaceOrder.jsx", "JavaScript JSX", 0, 0, 243, 0, 0, 0, 0, 5, 32, 280
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Success\Success.css", "PostCSS", 0, 19, 0, 0, 0, 0, 0, 0, 3, 22
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\src\pages\Success\Success.jsx", "JavaScript JSX", 0, 0, 17, 0, 0, 0, 0, 0, 5, 22
+"c:\Users\anand\OneDrive\Documents\FullStackDevelopment\HMFD\frontend\vite.config.js", "JavaScript", 5, 0, 0, 0, 0, 0, 0, 1, 2, 8
+"Total", "-", 920, 1214, 1235, 18, 27, 9053, 27, 176, 531, 13201

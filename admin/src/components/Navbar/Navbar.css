@@ -1,15 +1,82 @@
-.navbar{
+/* ===================== NAVBAR ===================== */
+.navbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px 30px;
-  background-color: white;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 28px;
+  background: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
 }
 
-.navbar .logo{
-  width: max(15%,90px);
+.navbar .logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
 }
 
-.navbar .profile{
-  width: 40px;
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar-badge {
+  position: relative;
+}
+
+.navbar-badge-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.navbar-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.navbar .profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--card-border);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.navbar .profile:hover {
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.navbar-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+}
+
+.navbar-user-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.navbar-user-role {
+  font-size: 11px;
+  color: var(--primary);
+  font-weight: 500;
 }

@@ -5,7 +5,7 @@ import { placeOrder, verifyOrder, userOrders, deleteFailedOrders, listOrders, up
 const orderRouter = express.Router();
 
 orderRouter.post("/place",authMiddleware,placeOrder);
-orderRouter.post("/verify", authMiddleware, verifyOrder);
+orderRouter.post("/verify", verifyOrder);
 orderRouter.post("/userorders", authMiddleware , userOrders);
 orderRouter.post("/delete-failed", authMiddleware, deleteFailedOrders);
 orderRouter.get("/list", listOrders);

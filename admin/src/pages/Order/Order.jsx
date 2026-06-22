@@ -26,10 +26,9 @@ function Orders({ url }) {
         orderId,
         status: newStatus,
       });
-
       if (response.data.success) {
         toast.success("Status Updated");
-        fetchAllOrders(); // refresh UI
+        fetchAllOrders();
       } else {
         toast.error("Update failed");
       }
@@ -38,64 +37,90 @@ function Orders({ url }) {
     }
   };
 
+  const getStatusClass = (status) => {
+    if (status === "Delivered") return "status-delivered";
+    if (status === "Out for Delivery") return "status-delivery";
+    return "status-processing";
+  };
+
   useEffect(() => {
     fetchAllOrders();
   }, []);
 
   return (
-    <div className="orders-container">
-      <h2 className="orders-title">All Orders</h2>
+    <div className="orders-page">
+      <div className="page-header" style={{ marginBottom: "24px" }}>
+        <h1 className="page-title">Orders</h1>
+        <p className="page-subtitle">Track and manage all customer orders</p>
+      </div>
 
-      <div className="orders-list">
-        {orders.map((order, index) => (
-          <div key={index} className="order-card">
-            <div className="order-left">
-              <img src={assets.parcel_icon} alt="parcel" />
+      {orders.length === 0 ? (
+        <div className="orders-empty">
+          <div className="orders-empty-icon">📦</div>
+          <h3>No orders yet</h3>
+          <p>Orders will appear here once customers start placing them.</p>
+        </div>
+      ) : (
+        <div className="orders-list">
+          {orders.map((order, index) => (
+            <div key={index} className="order-card">
+              {/* Icon */}
+              <div className="order-icon-wrap">
+                <img src={assets.parcel_icon} alt="parcel" />
+              </div>
 
-              <div className="order-details">
-                <p className="order-food">
+              {/* Info */}
+              <div className="order-info">
+                <p className="order-items-text">
                   {order.items.map((item, i) =>
                     i === order.items.length - 1
-                      ? `${item.name} x${item.quantity}`
-                      : `${item.name} x${item.quantity}, `,
+                      ? `${item.name} ×${item.quantity}`
+                      : `${item.name} ×${item.quantity}, `
                   )}
                 </p>
 
-                <p className="order-user">
-                  {order.address.firstName} {order.address.lastName}
-                </p>
-
-                <div className="order-address">
-                  <p>{order.address.street}</p>
-                  <p>
-                    {order.address.city}, {order.address.state},{" "}
-                    {order.address.country} - {order.address.pincode}
-                  </p>
+                <div className="order-meta-row">
+                  <span className="order-meta-item">
+                    <span className="order-meta-icon">👤</span>
+                    {order.address.firstName} {order.address.lastName}
+                  </span>
+                  <span className="order-meta-item">
+                    <span className="order-meta-icon">📞</span>
+                    {order.address.phone}
+                  </span>
+                  <span className={`status-badge ${getStatusClass(order.status)}`}>
+                    {order.status || "Food Processing"}
+                  </span>
                 </div>
 
-                <p className="order-phone">{order.address.phone}</p>
+                <div className="order-address-block">
+                  <strong>Delivery Address</strong>
+                  {order.address.street},{" "}
+                  {order.address.city}, {order.address.state},{" "}
+                  {order.address.country} – {order.address.pincode}
+                </div>
+              </div>
+
+              {/* Actions */}
+              <div className="order-actions">
+                <div>
+                  <div className="order-amount">₹{order.amount}</div>
+                  <div className="order-count-badge">{order.items.length} item{order.items.length > 1 ? "s" : ""}</div>
+                </div>
+                <select
+                  onChange={(e) => statusHandler(order._id, e.target.value)}
+                  value={order.status || "Food Processing"}
+                  className="status-select"
+                >
+                  <option value="Food Processing">Food Processing</option>
+                  <option value="Out for Delivery">Out for Delivery</option>
+                  <option value="Delivered">Delivered</option>
+                </select>
               </div>
             </div>
-
-            <div className="order-right">
-              <p>
-                <b>Items:</b> {order.items.length}
-              </p>
-              <p>
-                <b>Total:</b> ₹{order.amount}
-              </p>
-
-              <select
-                onChange={(e) => statusHandler(order._id, e.target.value)}
-                className="status-select">
-                <option value="Food Processing">Food Processing</option>
-                <option value="Out for Delivery">Out for Delivery</option>
-                <option value="Delivered">Delivered</option>
-              </select>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

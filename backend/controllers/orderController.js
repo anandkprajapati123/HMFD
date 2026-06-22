@@ -11,7 +11,7 @@ const placeOrder = async (req, res) => {
   });
 
   try {
-    // Create order in DB
+    // Create order in DB (not saved yet)
     const newOrder = new orderModel({
       userId: req.userId,
       items: req.body.items,
@@ -26,26 +26,22 @@ const placeOrder = async (req, res) => {
       receipt: newOrder._id.toString(),
     });
 
-    // Create Razorpay order
-    const options = {
-      amount: req.body.amount * 100, // convert to paise
-      currency: "INR",
-      receipt: newOrder._id.toString(),
-    };
-
-    // link Razorpay order ID with our order
+    // Link Razorpay order ID and save
     newOrder.razorpayOrderId = razorpayOrder.id;
-    // Save Razorpay order ID in DB
     await newOrder.save();
 
+    console.log("Order saved:", {
+      orderId: newOrder._id,
+      razorpayOrderId: newOrder.razorpayOrderId,
+    });
+
+    // Clean up old unpaid orders (NEVER delete the one we just created)
     await orderModel.deleteMany({
       userId: req.userId,
       payment: false,
+      _id: { $ne: newOrder._id },
       date: { $lt: new Date(Date.now() - 30 * 60 * 1000) },
     });
-
-    // Clear cart data in user model
-    await userModel.findByIdAndUpdate(req.userId, { cartData: {} });
 
     // Send order details to frontend
     res.json({
@@ -55,62 +51,64 @@ const placeOrder = async (req, res) => {
     });
   } catch (error) {
     console.log("RAZORPAY ERROR:", error);
-    res.status(500).json({ success: false, message: "Error placing order" });
+    res.json({ success: false, message: "Error placing order: " + error.message });
   }
 };
 
+
 // Verify Razorpay payment
 const verifyOrder = async (req, res) => {
-  // console.log("VERIFY API HIT");
-
   try {
     const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
+
+    console.log("🔍 Verifying payment for razorpay_order_id:", razorpay_order_id);
+
+    // Check required fields
+    if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
+      return res.json({ success: false, message: "Missing payment details" });
+    }
+
+    // Verify signature
     const sign = razorpay_order_id + "|" + razorpay_payment_id;
-    const expectedSign = crypto.createHmac("sha256", process.env.RAZORPAY_SECRET_KEY)
-    .update(sign).digest("hex");
+    const expectedSign = crypto
+      .createHmac("sha256", process.env.RAZORPAY_SECRET_KEY)
+      .update(sign)
+      .digest("hex");
 
-    // signature mismatch
     if (expectedSign !== razorpay_signature) {
-      return res.status(400).json({
-        success: false,
-        message: "Invalid Signature",
-      });
+      console.log("❌ Signature mismatch:", { expectedSign, razorpay_signature });
+      return res.json({ success: false, message: "Invalid Signature" });
     }
 
-    // FIX: define order properly
-    const order = await orderModel.findOne({
-      razorpayOrderId: razorpay_order_id,
-    });
+    console.log("✅ Signature verified. Searching DB for:", razorpay_order_id);
 
+    // Find order by Razorpay order ID
+    const order = await orderModel.findOne({ razorpayOrderId: razorpay_order_id });
+
+    // Debug: show recent orders if not found
     if (!order) {
-      return res.status(404).json({
-        success: false,
-        message: "Order not found",
-      });
+      const recentOrders = await orderModel.find({}).sort({ date: -1 }).limit(5).select("razorpayOrderId payment date");
+      console.log("❌ Order not found. Last 5 orders in DB:", JSON.stringify(recentOrders, null, 2));
+      return res.json({ success: false, message: "Order not found" });
     }
 
-    // update payment
+    console.log("✅ Order found:", order._id);
+
+    // Update payment status
     order.payment = true;
     order.razorpayPaymentId = razorpay_payment_id;
     await order.save();
 
-    // clear cart
-    await userModel.findByIdAndUpdate(order.userId, {
-      cartData: {},
-    });
+    // Clear cart
+    await userModel.findByIdAndUpdate(order.userId, { cartData: {} });
 
-    res.json({
-      success: true,
-      message: "Payment Verified Successfully",
-    });
+    res.json({ success: true, message: "Payment Verified Successfully" });
   } catch (error) {
     console.log("VERIFY ERROR:", error);
-    res.status(500).json({
-      success: false,
-      message: "Verification Failed",
-    });
+    res.json({ success: false, message: "Verification Failed: " + error.message });
   }
 };
+
 
 // Get orders of a user
 const userOrders = async (req, res) => {

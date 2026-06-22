@@ -26,10 +26,10 @@
   display: none; /* not needed in app UI */
 }
 
-/* GRID */
+/* GRID — always 4 columns on desktop */
 .food-display-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
@@ -49,10 +49,10 @@
   }
 }
 
-/* TABLET */
+/* TABLET — 2 columns */
 @media (max-width: 900px) {
   .food-display-list {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

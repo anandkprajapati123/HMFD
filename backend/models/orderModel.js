@@ -9,7 +9,7 @@ const orderSchema = new mongoose.Schema({
   payment:{type:Boolean,default:false},
   razorpayOrderId:{type:String},
   razorpayPaymentId:{type:String},
-  date:{type:Date,default:Date.now()},
+  date:{type:Date,default:Date.now},
 })
 
 const orderModel = mongoose.models.order || mongoose.model("order",orderSchema);
