@@ -26,8 +26,38 @@ app.use(cors({
 // database connection
 connectDB();
 
+import path from "path";
+import fs from "fs";
+
 // api endpoints
 app.use("/api/food", foodRouter);
+
+// Smart image serving with fallback matching for different timestamps
+app.get("/images/:filename", (req, res, next) => {
+  const filename = req.params.filename;
+  const uploadsDir = path.join(process.cwd(), "uploads");
+  const filePath = path.join(uploadsDir, filename);
+
+  if (fs.existsSync(filePath)) {
+    return res.sendFile(filePath);
+  }
+
+  // Fallback: If exact timestamp filename is missing, find any local file ending with food_X.png
+  const baseNameMatch = filename.match(/(food_\d+\.\w+)$/i);
+  if (baseNameMatch) {
+    const suffix = baseNameMatch[1];
+    if (fs.existsSync(uploadsDir)) {
+      const files = fs.readdirSync(uploadsDir);
+      const matchingFile = files.find((f) => f.endsWith(suffix));
+      if (matchingFile) {
+        return res.sendFile(path.join(uploadsDir, matchingFile));
+      }
+    }
+  }
+
+  res.status(404).send("Image not found");
+});
+
 app.use("/images", express.static("uploads"));
 app.use("/api/user", userRouter);
 app.use("/api/cart",cartRouter);
