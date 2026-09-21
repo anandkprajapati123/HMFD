@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AdminDetailPopup.css';
 import { assets } from '../../assets/assets';
 
-const AdminDetailPopup = ({ setShowAdminDetail }) => {
+const AdminDetailPopup = ({ setShowAdminDetail, adminInfo, onSave }) => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [formData, setFormData] = useState({ ...adminInfo });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSave = () => {
+    onSave(formData);
+    setIsEditing(false);
+  };
+
   return (
     <div className='admin-detail-overlay' onClick={() => setShowAdminDetail(false)}>
       <div className='admin-detail-modal' onClick={(e) => e.stopPropagation()}>
         <div className='admin-detail-header'>
-          <h3>Admin Details</h3>
+          <h3>Admin Profile Details</h3>
           <button className='close-btn' onClick={() => setShowAdminDetail(false)}>✕</button>
         </div>
 
@@ -15,28 +27,71 @@ const AdminDetailPopup = ({ setShowAdminDetail }) => {
           <div className='admin-profile-section'>
             <img className='admin-avatar' src={assets.profile_image} alt="Admin Profile" />
             <div className='admin-main-info'>
-              <h4>Anand Prajapati</h4>
-              <span className='role-badge'>Super Admin</span>
-              <span className='status-badge'>🟢 Active</span>
+              {isEditing ? (
+                <>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="edit-input name-input"
+                    placeholder="Admin Name"
+                  />
+                  <input
+                    type="text"
+                    name="role"
+                    value={formData.role}
+                    onChange={handleChange}
+                    className="edit-input role-input"
+                    placeholder="Role"
+                  />
+                </>
+              ) : (
+                <>
+                  <h4>{adminInfo.name}</h4>
+                  <span className='role-badge'>{adminInfo.role}</span>
+                  <span className='status-badge'>🟢 Active</span>
+                </>
+              )}
             </div>
           </div>
 
           <div className='admin-info-grid'>
             <div className='info-item'>
               <span className='info-label'>Email</span>
-              <span className='info-value'>admin@hmfd.com</span>
+              {isEditing ? (
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="edit-input"
+                />
+              ) : (
+                <span className='info-value'>{adminInfo.email}</span>
+              )}
             </div>
             <div className='info-item'>
               <span className='info-label'>Phone</span>
-              <span className='info-value'>+91 98765 43210</span>
+              {isEditing ? (
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="edit-input"
+                />
+              ) : (
+                <span className='info-value'>{adminInfo.phone}</span>
+              )}
             </div>
             <div className='info-item'>
               <span className='info-label'>Access Level</span>
               <span className='info-value'>Full Control</span>
             </div>
             <div className='info-item'>
-              <span className='info-label'>Joined</span>
-              <span className='info-value'>September 2026</span>
+              <span className='info-label'>Status</span>
+              <span className='info-value' style={{ color: '#059669' }}>Active</span>
             </div>
           </div>
 
@@ -51,7 +106,17 @@ const AdminDetailPopup = ({ setShowAdminDetail }) => {
         </div>
 
         <div className='admin-detail-footer'>
-          <button className='btn-secondary' onClick={() => setShowAdminDetail(false)}>Close</button>
+          {isEditing ? (
+            <>
+              <button className='btn-secondary' onClick={() => setIsEditing(false)}>Cancel</button>
+              <button className='btn-primary' onClick={handleSave}>Save Changes</button>
+            </>
+          ) : (
+            <>
+              <button className='btn-secondary' onClick={() => setShowAdminDetail(false)}>Close</button>
+              <button className='btn-primary' onClick={() => setIsEditing(true)}>Edit Details</button>
+            </>
+          )}
         </div>
       </div>
     </div>

@@ -15,8 +15,14 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
   const [selectedFood, setSelectedFood] = useState(null);
+  const [showLogin, setShowLogin] = useState(false);
 
   const addToCart = async (itemId) => {
+    if (!token) {
+      setShowLogin(true);
+      return;
+    }
+
     setCartItems((prev) => {
       const updatedCart = prev || {};
 
@@ -115,6 +121,8 @@ const StoreContextProvider = (props) => {
     setToken,
     selectedFood,
     setSelectedFood,
+    showLogin,
+    setShowLogin,
   };
 
   return (

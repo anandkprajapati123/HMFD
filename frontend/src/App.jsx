@@ -13,9 +13,7 @@ import { Navigate } from "react-router-dom";
 import { StoreContext } from "./Context/StoreContext";
 
 const App = () => {
-
-  const [showLogin, setShowLogin] = useState(false);
-  const { token, getTotalCartAmount, selectedFood } = useContext(StoreContext);
+  const { token, getTotalCartAmount, selectedFood, showLogin, setShowLogin } = useContext(StoreContext);
 
   return (
     <>
