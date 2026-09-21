@@ -7,7 +7,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const { cartItems, addToCart, removeFromCart, url } =
+  const { cartItems, addToCart, removeFromCart, url, setSelectedFood } =
     useContext(StoreContext);
 
   // safe fallback
@@ -20,6 +20,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
           className="food-item-image"
           src={url + "/images/" + image}
           alt={name}
+          onClick={() => setSelectedFood({ _id: id, name, price, description, image })}
         />
 
         {!cartItems?.[id] ? (

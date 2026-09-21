@@ -122,7 +122,7 @@ export const food_list = [
     _id: "1",
     name: "Litti Chokha",
     image: food_1,
-    price: 50,
+    price: 60,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Indian Food",
@@ -131,7 +131,7 @@ export const food_list = [
     _id: "2",
     name: "Daal Chaval Sabji Roti",
     image: food_2,
-    price: 70,
+    price: 90,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Indian Food",
@@ -140,7 +140,7 @@ export const food_list = [
     _id: "3",
     name: "Daal Chaval",
     image: food_3,
-    price: 50,
+    price: 70,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Indian Food",
@@ -158,7 +158,7 @@ export const food_list = [
     _id: "5",
     name: "Mix Salad",
     image: food_5,
-    price: 30,
+    price: 40,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Salad",
@@ -176,7 +176,7 @@ export const food_list = [
     _id: "7",
     name: "Veg salad",
     image: food_7,
-    price: 30,
+    price: 50,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Salad",
@@ -185,7 +185,7 @@ export const food_list = [
     _id: "8",
     name: "Chicken Salad",
     image: food_8,
-    price: 50,
+    price: 60,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Salad",
@@ -194,7 +194,7 @@ export const food_list = [
     _id: "9",
     name: "Chicken Biryani",
     image: food_9,
-    price: 130,
+    price: 150,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Non Veg",
@@ -203,7 +203,7 @@ export const food_list = [
     _id: "10",
     name: "Chicken 65",
     image: food_10,
-    price: 150,
+    price: 180,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Non Veg",
@@ -212,7 +212,7 @@ export const food_list = [
     _id: "11",
     name: "Chicken Rice",
     image: food_11,
-    price: 90,
+    price: 120,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Non Veg",
@@ -221,7 +221,7 @@ export const food_list = [
     _id: "12",
     name: "Chicken Tikka",
     image: food_12,
-    price: 200,
+    price: 220,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Non Veg",
@@ -230,7 +230,7 @@ export const food_list = [
     _id: "13",
     name: "Chicken Sandwich",
     image: food_13,
-    price: 80,
+    price: 140,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
@@ -239,7 +239,7 @@ export const food_list = [
     _id: "14",
     name: "Vegan Sandwich",
     image: food_14,
-    price: 60,
+    price: 100,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
@@ -248,7 +248,7 @@ export const food_list = [
     _id: "15",
     name: "Grilled Sandwich",
     image: food_15,
-    price: 50,
+    price: 130,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
@@ -257,7 +257,7 @@ export const food_list = [
     _id: "16",
     name: "Bread Sandwich",
     image: food_16,
-    price: 45,
+    price: 150,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Sandwich",
@@ -311,7 +311,7 @@ export const food_list = [
     _id: "22",
     name: "Fried Cauliflower",
     image: food_22,
-    price: 45,
+    price: 100,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pure Veg",
@@ -320,7 +320,7 @@ export const food_list = [
     _id: "23",
     name: "Mix Veg Pulao",
     image: food_23,
-    price: 60,
+    price: 80,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pure Veg",
@@ -329,7 +329,7 @@ export const food_list = [
     _id: "24",
     name: "Rice Zucchini",
     image: food_24,
-    price: 40,
+    price: 100,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pure Veg",
@@ -365,7 +365,7 @@ export const food_list = [
     _id: "28",
     name: "Chicken Pasta",
     image: food_28,
-    price: 120,
+    price: 140,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Pasta",
@@ -374,7 +374,7 @@ export const food_list = [
     _id: "29",
     name: "Butter Noodles",
     image: food_29,
-    price: 50,
+    price: 100,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
@@ -392,7 +392,7 @@ export const food_list = [
     _id: "31",
     name: "Somen Noodles",
     image: food_31,
-    price: 20,
+    price: 120,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",
@@ -401,7 +401,7 @@ export const food_list = [
     _id: "32",
     name: "Cooked Noodles",
     image: food_32,
-    price: 25,
+    price: 120,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Noodles",

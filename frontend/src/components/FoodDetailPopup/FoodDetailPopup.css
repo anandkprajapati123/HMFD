@@ -1,0 +1,115 @@
+.food-popup {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: #00000090;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+}
+
+.food-popup-container {
+  width: 90%;
+  max-width: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 30px;
+  border-radius: 12px;
+  animation: fadeIn 0.3s;
+}
+
+.food-popup-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1a1a1a;
+}
+
+.food-popup-title h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.food-popup-title img {
+  width: 16px;
+  cursor: pointer;
+}
+
+.food-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.food-popup-image {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+.food-popup-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.food-popup-rating img {
+  width: 70px;
+}
+
+.food-popup-desc {
+  color: #676767;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.food-popup-price {
+  color: tomato;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.food-popup-action {
+  margin-top: 10px;
+}
+
+.food-popup-add-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: tomato;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.food-popup-add-btn:hover {
+  background-color: #ff4c29;
+}
+
+.food-popup-counter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: white;
+  border-radius: 50px;
+  padding: 8px;
+  width: fit-content;
+}
+
+.food-popup-counter img {
+  width: 30px;
+  cursor: pointer;
+}
+
+.food-popup-counter p {
+  font-size: 18px;
+  font-weight: 500;
+}

@@ -14,6 +14,7 @@ const StoreContextProvider = (props) => {
   console.log("API URL:", url);
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
+  const [selectedFood, setSelectedFood] = useState(null);
 
   const addToCart = async (itemId) => {
     setCartItems((prev) => {
@@ -112,6 +113,8 @@ const StoreContextProvider = (props) => {
     url,
     token,
     setToken,
+    selectedFood,
+    setSelectedFood,
   };
 
   return (

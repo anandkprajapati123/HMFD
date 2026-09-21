@@ -6,6 +6,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Cart from "./pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import FoodDetailPopup from "./components/FoodDetailPopup/FoodDetailPopup";
 import Success from "./pages/Success/Success";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import { Navigate } from "react-router-dom";
@@ -14,11 +15,12 @@ import { StoreContext } from "./Context/StoreContext";
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false);
-  const { token, getTotalCartAmount } = useContext(StoreContext);
+  const { token, getTotalCartAmount, selectedFood } = useContext(StoreContext);
 
   return (
     <>
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
+    {selectedFood?<FoodDetailPopup />:<></>}
       <div className="app">
         <Navbar setShowLogin={setShowLogin}/>
         <Routes>
