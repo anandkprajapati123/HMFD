@@ -91,6 +91,9 @@ function Orders({ url }) {
                   <span className={`status-badge ${getStatusClass(order.status)}`}>
                     {order.status || "Food Processing"}
                   </span>
+                  <span className="order-meta-item" style={{ fontSize: "12px", fontWeight: "600", color: order.payment ? "#059669" : "#dc2626" }}>
+                    {order.payment ? "🟢 Paid" : "🔴 Unpaid / Cancelled"}
+                  </span>
                 </div>
 
                 <div className="order-address-block">

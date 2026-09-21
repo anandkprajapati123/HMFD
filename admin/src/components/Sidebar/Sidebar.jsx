@@ -20,6 +20,10 @@ function Sidebar() {
           <img className="sidebar-icon" src={assets.order_icon} alt="" />
           <span className="sidebar-option-text">Orders</span>
         </NavLink>
+        <NavLink to={'/cancelled'} className="sidebar-option">
+          <img className="sidebar-icon" src={assets.order_icon} alt="" />
+          <span className="sidebar-option-text">Cancelled Orders</span>
+        </NavLink>
       </div>
 
       <div className="sidebar-footer">

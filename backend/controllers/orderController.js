@@ -162,6 +162,18 @@ const updateStatus = async (req, res) => {
   }
 };
 
+// remove order by admin
+const removeOrder = async (req, res) => {
+  try {
+    const { orderId } = req.body;
+    await orderModel.findByIdAndDelete(orderId);
+    res.json({ success: true, message: "Order Removed Successfully" });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error removing order" });
+  }
+};
+
 export {
   placeOrder,
   verifyOrder,
@@ -169,4 +181,5 @@ export {
   deleteFailedOrders,
   listOrders,
   updateStatus,
+  removeOrder,
 };
